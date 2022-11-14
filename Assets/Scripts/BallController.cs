@@ -21,7 +21,7 @@ public class BallController : MonoBehaviour
     float secOffset;
 
     //Texts
-    public TMP_Text finalTextHeader, finalText, leftText, timerText, playAgainText;
+    public TMP_Text finalTextHeader, finalText, leftText, timerText, playAgainText, levelText, fpsText;
 
     //Audio
     public AudioSource music;
@@ -59,6 +59,8 @@ public class BallController : MonoBehaviour
             //Update timer
             SetTimerText();
         }
+
+        UpdateFPS();
     }
 
     private void GetInput()
@@ -154,6 +156,7 @@ public class BallController : MonoBehaviour
         timerText.text = "Time:";
         playAgainText.text = "";
         SetLeftText();
+        fpsText.text = "fps";
     }
     private void SetLeftText()
     {
@@ -162,6 +165,10 @@ public class BallController : MonoBehaviour
     private void SetTimerText()
     {
         timerText.text = "Time: " + (Time.timeSinceLevelLoad - secOffset).ToString("0.0") + "s";
+    }
+    private void UpdateFPS()
+    {
+        fpsText.text = (1/Time.deltaTime).ToString("0") + " fps";
     }
     private void ManageTextAtGameEnd()
     {
