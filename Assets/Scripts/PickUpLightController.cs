@@ -17,7 +17,7 @@ public class PickUpLightController : MonoBehaviour
     {
         _light.intensity = Mathf.PingPong(Time.time*1.6f, 0.4f)+0.4f;
         //_light.intensity = (Random.Range(.5f, 1));
-        //_light.intensity = (Mathf.PingPong(Time.time * 1.6f, 0.5f) + 0.5f) + ((Random.Range(0, 0.1f)));
+        //_light.intensity = (Mathf.PingPong(Time.time * 1.6f, 0.4f) + 0.4f) + ((Random.Range(0, 0.1f)));
         //Debug.Log(_light.intensity);
     }
 }

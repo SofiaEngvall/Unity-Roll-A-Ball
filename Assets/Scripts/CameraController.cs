@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-    public GameObject player;
+    public GameObject ball;
     Vector3 offset;
 
     // Start is called before the first frame update
@@ -16,7 +16,7 @@ public class CameraController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Min pos + spelarens pos + offset (skillnaden på startpos)
-        transform.position = player.transform.position + offset;
+        //Camera pos + ball pos + offset (diff in start pos)
+        transform.position = ball.transform.position + offset;
     }
 }

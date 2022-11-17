@@ -68,21 +68,11 @@ public class BallController : MonoBehaviour
         //Get movement input
         moveHorizontal = Input.GetAxis("Horizontal");
         moveVertical = Input.GetAxis("Vertical");
-        //Calculate Vector3
         direction = new Vector3(moveHorizontal, 0.0f, moveVertical);
 
         //- Get game control input -
-        //ESC to quit
         if(Input.GetKeyDown(KeyCode.Escape)) Application.Quit();
-        //R to  restart game
-        if(Input.GetKeyDown(KeyCode.R))
-        {
-            ResetBall();
-            ResetPickups();
-            InitGame();
-            InitTexts();
-            music.Play();
-        }
+        if(Input.GetKeyDown(KeyCode.R)) ResetGame();
     }
 
     private void FixedUpdate()
@@ -120,6 +110,14 @@ public class BallController : MonoBehaviour
     {
         score = 0;
         secOffset = 0;
+    }
+    private void ResetGame()
+    {
+        ResetBall();
+        ResetPickups();
+        InitGame();
+        InitTexts();
+        music.Play();
     }
     private void ResetBall()
     {
